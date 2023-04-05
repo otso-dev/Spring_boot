@@ -22,3 +22,15 @@ public class HelloController {
 		return testMap;
 	}
 }
+
+//GET 요청
+/*
+ * param 1개
+ * param 여러개 -> Dto 만들어서 1, Dto없이 1
+ * */
+
+//POST
+/*
+ * param 여러개 -> formData 1, JSON 1
+ * */
+ */
