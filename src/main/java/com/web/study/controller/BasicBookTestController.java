@@ -79,7 +79,6 @@ public class BasicBookTestController {
 	
 	@PostMapping("/bookcreateform")
 	public ResponseEntity<? extends ResponseDto> bookCreateForm(Book book){
-		books.add(book);
 		
 		System.out.println(books);
 		
@@ -89,7 +88,6 @@ public class BasicBookTestController {
 	@PostMapping("/bookcreatejson")
 	public ResponseEntity<? extends ResponseDto> bookCreateJson(@RequestBody Book book){
 		books.add(book);
-		
 		System.out.println(books);
 		
 		return ResponseEntity.created(null).body(DataResponseDto.of(book));
