@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<script src="http//code.jquery.com/jquery-latest.min.js"></script>
+<script src="//code.jquery.com/jquery-1.12.0.min.js"></script>
 </head>
 <body>
 	<div>
@@ -38,10 +38,31 @@
 			const name = document.querySelector(".name").value;
 			const email = document.querySelector(".email").value;
 			
-			console.log(username);
-			console.log(password);
-			console.log(name);
-			console.log(email);
+			const userObj = {
+					username,
+					password,
+					name,
+					email
+			}
+			console.log(JSON.stringify(userObj));
+			
+			const request = {
+					type:"post",//method
+					url:"http://localhost:8080/api/user/addition",
+					contentType:"application/json",//request data type
+					data:JSON.stringify(userObj),//request data
+					dataType:"json",//response data type
+					
+					//response 성공시에 실행될 메소드 정의
+					success:(response)=>{
+						console.log(response);
+					},
+					//request 또는 response 실패시 실행될 메소드 정의
+					error:(error) =>{
+						console.log(error);
+					}
+			}
+			$.ajax(request);
 		}
 	</script>
 </body>

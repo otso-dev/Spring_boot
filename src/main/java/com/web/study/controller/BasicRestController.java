@@ -46,6 +46,8 @@ public class BasicRestController {
 		System.out.println("데이터 추가");
 		return ResponseEntity.created(null).body(DataResponseDto.of(basicTestDto));
 	}
+	
+	
 }
 
 //@RequestParam("age") int userAge, 매개변수에 get요청에 param을 받을 때 requestparam을 생략하고 매개변수에 이름을 param에 key값과 동일하게 쓸 수 있다.
