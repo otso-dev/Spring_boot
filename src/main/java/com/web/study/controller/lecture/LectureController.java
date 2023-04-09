@@ -5,8 +5,12 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.web.study.domain.entity.Student;
 import com.web.study.dto.ResponseDto;
+import com.web.study.dto.request.lecture.LectureRegisteDto;
 import com.web.study.dto.request.lecture.LectureReqDto;
+import com.web.study.dto.request.lecture.LecturerReqDto;
+import com.web.study.dto.request.lecture.StudentReqDto;
 import com.web.study.service.LectureService;
 
 import lombok.RequiredArgsConstructor;
@@ -23,7 +27,25 @@ public class LectureController {
 		lectureService.registeLecture(lectureReqDto);
 		return ResponseEntity.ok().body(ResponseDto.ofDefalut());
 	}
-
+	
+	@PostMapping("/lecturer")
+	public ResponseEntity<? extends ResponseDto> lecturerRegister(@RequestBody LecturerReqDto lecturerReqDto){
+		lectureService.registeLecturer(lecturerReqDto);
+		return ResponseEntity.ok(ResponseDto.ofDefalut());
+	}
+	
+	@PostMapping("/student")
+	public ResponseEntity<? extends ResponseDto> studentRegister(@RequestBody StudentReqDto studentReqDto){
+		lectureService.registeStudent(studentReqDto);
+		return ResponseEntity.ok(ResponseDto.ofDefalut());
+	}
+	
+	@PostMapping("/lecture-registe")
+	public ResponseEntity<? extends ResponseDto> lectureRegisteRegister(@RequestBody LectureRegisteDto lectureRegisteDto){
+		lectureService.registeLectureRegiste(lectureRegisteDto);
+		return ResponseEntity.ok(ResponseDto.ofDefalut());
+	}
+	
 	// Read
 	public ResponseEntity<? extends ResponseDto> get() {
 
