@@ -7,4 +7,5 @@ import com.web.study.domain.entity.Course;
 @Mapper
 public interface CourseRepository {
 	public void saveCourse(Course course);
+	public Course getCorCourseAll();
 }
