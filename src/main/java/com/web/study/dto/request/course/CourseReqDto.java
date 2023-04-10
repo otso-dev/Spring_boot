@@ -1,4 +1,4 @@
-package com.web.study.dto.request.lecture;
+package com.web.study.dto.request.course;
 
 import java.time.LocalDate;
 
@@ -9,7 +9,7 @@ import lombok.ToString;
 
 @Setter
 @ToString
-public class LectureRegisteDto {
+public class CourseReqDto {
 	private int lectureId;
 	private int studentId;
 	private LocalDate registeDate;

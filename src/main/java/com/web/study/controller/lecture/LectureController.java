@@ -28,23 +28,23 @@ public class LectureController {
 		return ResponseEntity.ok().body(ResponseDto.ofDefalut());
 	}
 	
-	@PostMapping("/lecturer")
-	public ResponseEntity<? extends ResponseDto> lecturerRegister(@RequestBody LecturerReqDto lecturerReqDto){
-		lectureService.registeLecturer(lecturerReqDto);
-		return ResponseEntity.ok(ResponseDto.ofDefalut());
-	}
+//	@PostMapping("/lecturer")
+//	public ResponseEntity<? extends ResponseDto> lecturerRegister(@RequestBody LecturerReqDto lecturerReqDto){
+//		lectureService.registeLecturer(lecturerReqDto);
+//		return ResponseEntity.ok(ResponseDto.ofDefalut());
+//	}
 	
-	@PostMapping("/student")
-	public ResponseEntity<? extends ResponseDto> studentRegister(@RequestBody StudentReqDto studentReqDto){
-		lectureService.registeStudent(studentReqDto);
-		return ResponseEntity.ok(ResponseDto.ofDefalut());
-	}
+//	@PostMapping("/student")
+//	public ResponseEntity<? extends ResponseDto> studentRegister(@RequestBody StudentReqDto studentReqDto){
+//		lectureService.registeStudent(studentReqDto);
+//		return ResponseEntity.ok(ResponseDto.ofDefalut());
+//	}
 	
-	@PostMapping("/lecture-registe")
-	public ResponseEntity<? extends ResponseDto> lectureRegisteRegister(@RequestBody LectureRegisteDto lectureRegisteDto){
-		lectureService.registeLectureRegiste(lectureRegisteDto);
-		return ResponseEntity.ok(ResponseDto.ofDefalut());
-	}
+//	@PostMapping("/lecture-registe")
+//	public ResponseEntity<? extends ResponseDto> lectureRegisteRegister(@RequestBody LectureRegisteDto lectureRegisteDto){
+//		lectureService.registeLectureRegiste(lectureRegisteDto);
+//		return ResponseEntity.ok(ResponseDto.ofDefalut());
+//	}
 	
 	// Read
 	public ResponseEntity<? extends ResponseDto> get() {

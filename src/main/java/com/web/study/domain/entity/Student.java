@@ -8,8 +8,9 @@ import lombok.ToString;
 
 
 @ToString
-@Getter
 @Builder
+@Getter
+//@Alias("S1")
 public class Student {
 	private int id;
 	private String name;

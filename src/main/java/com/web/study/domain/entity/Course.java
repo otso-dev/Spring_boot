@@ -9,7 +9,7 @@ import lombok.ToString;
 @ToString
 @Builder
 @Getter
-public class LectureRegiste {
+public class Course {
 	private int id;
 	private int lecture_id;
 	private int student_id;

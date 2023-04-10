@@ -3,7 +3,7 @@ package com.web.study.service;
 import org.springframework.stereotype.Service;
 
 import com.web.study.domain.entity.Lecture;
-import com.web.study.domain.entity.LectureRegiste;
+import com.web.study.domain.entity.Course;
 import com.web.study.domain.entity.Lecturer;
 import com.web.study.domain.entity.Student;
 import com.web.study.dto.request.lecture.LectureRegisteDto;
@@ -28,24 +28,24 @@ public class LectureServiceImpl implements LectureService{
 		lectureRepository.registe(lecture);
 	}
 
-	@Override
-	public void registeLecturer(LecturerReqDto lecturerReqDto) {
-		Lecturer lecturer = lecturerReqDto.toEntity();
-		lectureRepository.registeLecturer(lecturer);
-		
-	}
-
-	@Override
-	public void registeStudent(StudentReqDto studentReqDto) {
-		Student student = studentReqDto.toEntity();
-		lectureRepository.regisetStudent(student);
-	}
-
-	@Override
-	public void registeLectureRegiste(LectureRegisteDto lectureRegisteDto) {
-		LectureRegiste lectureRegiste = lectureRegisteDto.toEntity();
-		lectureRepository.regisetLectureRegiste(lectureRegiste);
-	}
+//	@Override
+//	public void registeLecturer(LecturerReqDto lecturerReqDto) {
+//		Lecturer lecturer = lecturerReqDto.toEntity();
+//		lectureRepository.registeLecturer(lecturer);
+//		
+//	}
+//
+//	@Override
+//	public void registeStudent(StudentReqDto studentReqDto) {
+//		Student student = studentReqDto.toEntity();
+//		lectureRepository.regisetStudent(student);
+//	}
+//
+//	@Override
+//	public void registeLectureRegiste(LectureRegisteDto lectureRegisteDto) {
+//		Course lectureRegiste = lectureRegisteDto.toEntity();
+//		lectureRepository.regisetLectureRegiste(lectureRegiste);
+//	}
 	
 	
 
