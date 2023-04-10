@@ -1,5 +1,8 @@
 package com.web.study.service;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.stereotype.Service;
 
 import com.web.study.domain.entity.Lecture;
@@ -10,6 +13,7 @@ import com.web.study.dto.request.lecture.LectureRegisteDto;
 import com.web.study.dto.request.lecture.LectureReqDto;
 import com.web.study.dto.request.lecture.LecturerReqDto;
 import com.web.study.dto.request.lecture.StudentReqDto;
+import com.web.study.dto.response.LectureRespDto;
 import com.web.study.respository.LectureRepository;
 
 import lombok.RequiredArgsConstructor;
@@ -26,6 +30,21 @@ public class LectureServiceImpl implements LectureService{
 		Lecture lecture = lectureReqDto.toEntity();
 		System.out.println("변환"+ lecture);
 		lectureRepository.registe(lecture);
+	}
+
+	@Override
+	public List<LectureRespDto> getLectureAll() {
+		List<LectureRespDto> dtos = new ArrayList<>();
+		lectureRepository.getLectureAll().forEach(lecture ->{
+			dtos.add(lecture.toDto());
+		});
+		return dtos;
+	}
+
+	@Override
+	public LectureRespDto findLectureById(int id) {
+		// TODO Auto-generated method stub
+		return lectureRepository.findLectureById(id).toDto();
 	}
 
 //	@Override

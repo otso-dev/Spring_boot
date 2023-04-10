@@ -1,5 +1,7 @@
 package com.web.study.respository;
 
+import java.util.List;
+
 import org.apache.ibatis.annotations.Mapper;
 
 import com.web.study.domain.entity.Lecture;
@@ -11,6 +13,10 @@ import com.web.study.domain.entity.Student;
 public interface LectureRepository {
 	
 	public int registe(Lecture lecture);
+	
+	public List<Lecture> getLectureAll();
+	
+	public Lecture findLectureById(int id);
 	
 //	public int registeLecturer(Lecturer lecturer);
 //	

@@ -10,5 +10,26 @@
   	values(0,#{lecture_name}, #{lecture_price}, #{lecturer_id})
   </insert>
   
+  <select id="getLectureAll" resultType="com.web.study.domain.entity.Lecture">
+	  select
+	  	id,
+	  	lecture_name,
+	  	lecture_price,
+	  	lecturer_id
+	  from
+	  	lecture_mst
+  </select>
+  
+  <select id="findlectureById" resultType="com.web.study.domain.entity.Lecture">
+	  select
+	  	id,
+	  	lecture_name,
+	  	lecture_price,
+	  	lecturer_id
+	  from
+	  	lecture_mst
+	  where
+	  	id = #{id}
+  </select>
   
 </mapper>
