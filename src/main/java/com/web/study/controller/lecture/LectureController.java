@@ -1,19 +1,16 @@
 package com.web.study.controller.lecture;
 
 import org.springframework.http.ResponseEntity;
+import org.springframework.lang.Nullable;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.web.study.domain.entity.Student;
 import com.web.study.dto.DataResponseDto;
 import com.web.study.dto.ResponseDto;
-import com.web.study.dto.request.lecture.LectureRegisteDto;
 import com.web.study.dto.request.lecture.LectureReqDto;
-import com.web.study.dto.request.lecture.LecturerReqDto;
-import com.web.study.dto.request.lecture.StudentReqDto;
 import com.web.study.service.LectureService;
 
 import lombok.RequiredArgsConstructor;
@@ -38,26 +35,14 @@ public class LectureController {
 	
 	@GetMapping("/lecture/{id}")
 	public ResponseEntity<? extends ResponseDto> findLectureById(@PathVariable int id){
+		System.out.println(id);
 		return ResponseEntity.ok().body(DataResponseDto.of(lectureService.findLectureById(id)));
 	}
 	
-//	@PostMapping("/lecturer")
-//	public ResponseEntity<? extends ResponseDto> lecturerRegister(@RequestBody LecturerReqDto lecturerReqDto){
-//		lectureService.registeLecturer(lecturerReqDto);
-//		return ResponseEntity.ok(ResponseDto.ofDefalut());
-//	}
-	
-//	@PostMapping("/student")
-//	public ResponseEntity<? extends ResponseDto> studentRegister(@RequestBody StudentReqDto studentReqDto){
-//		lectureService.registeStudent(studentReqDto);
-//		return ResponseEntity.ok(ResponseDto.ofDefalut());
-//	}
-	
-//	@PostMapping("/lecture-registe")
-//	public ResponseEntity<? extends ResponseDto> lectureRegisteRegister(@RequestBody LectureRegisteDto lectureRegisteDto){
-//		lectureService.registeLectureRegiste(lectureRegisteDto);
-//		return ResponseEntity.ok(ResponseDto.ofDefalut());
-//	}
+	@GetMapping("/search/lecture")
+	public ResponseEntity<? extends ResponseDto> searchLecture(int type, String searchValue){
+		return ResponseEntity.ok().body(DataResponseDto.of(DataResponseDto.of(lectureService.searchLecture(type, searchValue))));
+	}
 	
 	// Read
 	public ResponseEntity<? extends ResponseDto> get() {
@@ -87,7 +72,7 @@ public class LectureController {
  * id, lecture_id(강의), student_id(학생), registe_date(등록일)
  * 
  * 강의정보
- * id, name(강의명), price(가격), lecturer_id(강사)
+ * id, name(강의명), price(가격), instructor_id(강사)
  * 
  * 강사정보
  * id, name(강사명), birth_date(생년월일)

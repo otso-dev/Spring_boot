@@ -1,13 +1,11 @@
 package com.web.study.respository;
 
 import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.annotations.Mapper;
 
 import com.web.study.domain.entity.Lecture;
-import com.web.study.domain.entity.Course;
-import com.web.study.domain.entity.Lecturer;
-import com.web.study.domain.entity.Student;
 
 @Mapper
 public interface LectureRepository {
@@ -18,7 +16,9 @@ public interface LectureRepository {
 	
 	public Lecture findLectureById(int id);
 	
-//	public int registeLecturer(Lecturer lecturer);
+	public List<Lecture> searchLecture(Map<String, Object> parameterMap);
+	
+//	public int registeInstructor(Instructor instructor);
 //	
 //	public int regisetStudent(Student student);
 //	

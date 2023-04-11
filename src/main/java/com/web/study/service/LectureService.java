@@ -12,7 +12,9 @@ public interface LectureService {
 	
 	public LectureRespDto findLectureById(int id);
 	
-//	public void registeLecturer(LecturerReqDto lecturerReqDto);
+	public List<LectureRespDto> searchLecture(int type, String searchValue);
+	
+//	public void registeInstructor(InstructorReqDto instructorReqDto);
 //	public void registeStudent(StudentReqDto studetreqDto);
 //	public void registeLectureRegiste(LectureRegisteDto lectureRegisteDto);
 }
