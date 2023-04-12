@@ -8,6 +8,7 @@ import java.util.Map;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StopWatch;
 
+import com.web.study.aop.annotation.ReturnDataAspect;
 import com.web.study.dto.request.course.CourseReqDto;
 import com.web.study.dto.response.CourseRespDto;
 import com.web.study.respository.CourseRepository;
@@ -22,23 +23,20 @@ public class CourseServiceImpl implements CourseService {
 	
 	@Override
 	public void registeCourse(CourseReqDto courseReqDto) {
-		StopWatch stopWatch = new StopWatch();
-		stopWatch.start();
 		courseRepository.saveCourse(courseReqDto.toEntity());
-		
-		stopWatch.stop();
-		System.out.println("메소드 실행 시간: " + stopWatch.getTotalTimeSeconds());
 	}
 
 	@Override
 	public List<CourseRespDto> getCourseAll() {
 		List<CourseRespDto> dtos = new ArrayList<>();
-		courseRepository.getCorCourseAll().forEach(entity -> {
+		courseRepository.getCourseAll().forEach(entity -> {
 			dtos.add(entity.toDto());
 		});
+	
 		return dtos;
 	}
 
+	@ReturnDataAspect
 	@Override
 	public List<CourseRespDto> searchCourse(int type, String searchValue) {
 		Map<String, Object> parameterMap = new HashMap<>();

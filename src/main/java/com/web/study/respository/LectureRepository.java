@@ -5,6 +5,7 @@ import java.util.Map;
 
 import org.apache.ibatis.annotations.Mapper;
 
+import com.web.study.aop.annotation.CheckNameAspect;
 import com.web.study.domain.entity.Lecture;
 
 @Mapper

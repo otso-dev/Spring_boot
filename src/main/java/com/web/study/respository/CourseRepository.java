@@ -10,7 +10,7 @@ import com.web.study.domain.entity.Course;
 @Mapper
 public interface CourseRepository {
 	public void saveCourse(Course course);
-	public List<Course> getCorCourseAll();
+	public List<Course> getCourseAll();
 	
 	public List<Course> searchCourse(Map<String, Object> parameterMap);
 }

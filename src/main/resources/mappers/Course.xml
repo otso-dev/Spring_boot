@@ -40,7 +40,7 @@
  	values(0,#{ltm_id},#{sdm_id},#{registe_date})
  </insert>  
  	
- <select id="getCorCourseAll" resultMap="course">
+ <select id="getCourseAll" resultMap="course">
  		select
  		cm.csm_id,
  		cm.ltm_id,
