@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+<mapper namespace="com.web.study.respository.UserRepository">
+  <insert id="saveUser"
+  useGeneratedKeys="true"
+  keyProperty="user_id" 
+  parameterType="com.web.study.domain.entity.User"
+  >
+  	insert into user_mst
+  	values(0,#{username}, #{password},#{name},#{email})
+  </insert>
+ 
+  <insert id="addAuthroities" parameterType="list">
+  	insert into authority_mst
+  	values
+  	<foreach collection="list" item="authority" separator=",">
+  		(0,#{authority.user_id}, #{authority.role_id})
+  	</foreach>
+  </insert>
+</mapper>
