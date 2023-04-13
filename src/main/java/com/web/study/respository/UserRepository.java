@@ -11,4 +11,5 @@ import com.web.study.domain.entity.User;
 public interface UserRepository {
 	public int saveUser(User user);
 	public int addAuthroities(List<Authority> authorities);
+	public User findUserByUsername(String username); 
 }
