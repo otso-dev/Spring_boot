@@ -39,6 +39,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		http.authorizeRequests()
 			.antMatchers("/auth/register/**","/auth/login/**")//url에 대한 권한을 설정
 			.permitAll()
+			.antMatchers("/course/all")
+			.hasRole("ADMIN")
 			.anyRequest()
 			.authenticated()
 			.and()
