@@ -56,7 +56,7 @@ public class AuthServiceImpl implements AuthService {
 
 	@Override
 	public JwtTokenRespDto login(LoginReqDto loginReqDto) {
-		//security
+		//UsernamePasswordAuthenticationToken은 security가 알아볼수 있는 형태로 username과 password를 바꿔줌
 		UsernamePasswordAuthenticationToken authenticationToken = new UsernamePasswordAuthenticationToken(
 				loginReqDto.getUsername(), loginReqDto.getPassword());
 		
